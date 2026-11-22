@@ -1,0 +1,61 @@
+/* ===== Редизайн 2: характер, охра, топография, удобство ===== */
+:root{--r2-ochre:#c8892f;--r2-ochre-d:#a96f1f;--r2-khaki:#2b3426;--r2-sand:#efe8d8;
+--r2-topo:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.06' stroke-width='1.2'%3E%3Cpath d='M-20 60c60-40 120 30 190 0s110-50 210-10'/%3E%3Cpath d='M-20 100c70-40 120 30 190 0s120-50 210-10'/%3E%3Cpath d='M-20 140c70-30 130 35 200 5s110-45 200-5'/%3E%3Cpath d='M-20 200c50-30 110 40 180 10s140-60 220-15'/%3E%3Cpath d='M-20 245c60-25 120 40 190 10s130-55 210-10'/%3E%3Cpath d='M-20 295c70-35 120 30 200 5s110-45 200-5'/%3E%3Cellipse cx='250' cy='170' rx='40' ry='22'/%3E%3Cellipse cx='250' cy='170' rx='70' ry='40'/%3E%3Cellipse cx='90' cy='320' rx='30' ry='16'/%3E%3C/g%3E%3C/svg%3E")}
+/* тёмные блоки — с рельефом */
+.booking,.site-footer,.rd-how,.rd-stats{background-image:var(--r2-topo)!important;background-repeat:repeat!important}
+/* охра: цены и акценты */
+.price .current,.card__title .price .current,.main-slider__fields .current{color:var(--r2-ochre)!important}
+.pages-slider__grid .card__title .price .current{background:var(--r2-ochre)!important;color:#1a140a!important;border-radius:6px!important;padding:3px 8px!important}
+h2.pages-slider__title,.page h2,.rd-sec-title{position:relative}
+h2.pages-slider__title:before,.rd-sec-title:before{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--r2-ochre);margin:0 0 12px}
+/* фильтры экскурсий */
+.rd-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 14px;margin:0 0 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rd-chips::-webkit-scrollbar{display:none}
+.rd-chip{flex:0 0 auto;border:1.5px solid #d8d4c6;background:#fff;color:#151716;font:600 14px/1 Inter,sans-serif;padding:10px 15px;border-radius:999px;cursor:pointer;transition:.2s}
+.rd-chip:hover{border-color:var(--r2-ochre)}
+.rd-chip.is-on{background:#19201c;border-color:#19201c;color:#fff}
+.pages-slider__grid .card.rd-hide{display:none!important}
+.pages-slider__grid.rd-filtered{grid-template-rows:auto!important;grid-auto-rows:252px}
+.pages-slider__grid.rd-filtered .card:first-child{grid-row:auto}
+/* «Как проходит заезд» */
+.rd-how{background-color:#0a1911!important;color:#f5f4ed;padding:56px 0;margin:48px 0 0}
+.rd-how__in{max-width:1240px;margin:0 auto;padding:0 20px}
+.rd-how h2{color:#fff!important;font:900 34px/1.05 Inter,sans-serif;letter-spacing:-.03em;margin:0 0 28px}
+.rd-how__steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+.rd-how__step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px 20px;position:relative}
+.rd-how__step:before{counter-increment:s;content:"0" counter(s);font:900 13px Inter;color:var(--r2-ochre);letter-spacing:.1em}
+.rd-how__step svg{display:block;width:34px;height:34px;margin:14px 0 12px;color:var(--r2-ochre)}
+.rd-how__step b{display:block;font:800 18px/1.2 Inter;color:#fff;margin:0 0 6px}
+.rd-how__step p{margin:0;font:400 14px/1.45 Inter;color:rgba(245,244,237,.72)}
+/* счётчики */
+.rd-stats{background-color:#19201c!important;padding:30px 0}
+.rd-stats__in{max-width:1240px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.rd-stat{color:#fff}
+.rd-stat b{display:block;font:900 40px/1 Inter;letter-spacing:-.04em;color:var(--r2-ochre)}
+.rd-stat span{font:500 14px/1.3 Inter;color:rgba(255,255,255,.75)}
+/* рубрики: 1 большая + 2 маленькие, как на главной */
+.page__grid.grid{grid-template-columns:2.05fr 1fr 1fr!important;grid-auto-rows:230px!important;gap:8px!important;border-top:0!important}
+.page__grid .card.card--news{border-radius:12px!important;overflow:hidden;background:#222!important}
+.page__grid .card.card--news:nth-child(3n+1){grid-row:span 2}
+.page__grid .card--news .card__body{display:block!important;height:100%!important;position:relative!important}
+.page__grid .card--news .card__body>div:first-child{position:absolute!important;inset:0;width:auto!important;height:auto!important;border-radius:0!important}
+.page__grid .card--news .card__image,.page__grid .card--news img{position:absolute!important;inset:0;width:100%!important;height:100%!important;object-position:50% 25%!important;transition:transform .5s}
+.page__grid .card--news:hover img{transform:scale(1.04)!important}
+.page__grid .card--news .card__body:after{content:""!important;display:block!important;position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(0,0,0,.78),rgba(0,0,0,.2) 45%,transparent 65%)!important}
+.page__grid .card--news .card__title{position:absolute!important;left:16px;right:16px;bottom:14px;z-index:2}
+.page__grid .card--news .card__title span:first-child{color:#fff!important;font-size:18px!important;font-weight:900!important;line-height:1.1!important}
+.page__grid .card--news .card__title .price .current{color:var(--r2-ochre)!important;font-size:15px!important}
+.page__grid .card--news .card__title .price .old{color:rgba(255,255,255,.6)!important}
+.page__grid .card--news .card__fields,.page__grid .card--news .card__more{display:none!important}
+/* кнопки: брони — красная, вторичные — охра-контур */
+.card__more{border-color:var(--r2-ochre)!important}
+/* мобильная */
+@media (max-width:760px){
+ .rd-how{padding:40px 0;margin-top:32px}.rd-how h2{font-size:26px}
+ .rd-how__steps{grid-template-columns:1fr 1fr;gap:10px}.rd-how__step{padding:16px 14px}.rd-how__step b{font-size:16px}.rd-how__step p{font-size:13px}
+ .rd-stats__in{grid-template-columns:1fr 1fr;gap:18px}.rd-stat b{font-size:32px}
+ .page__grid.grid{grid-template-columns:1fr 1fr!important;grid-auto-rows:165px!important;gap:8px!important}
+ .page__grid .card.card--news:nth-child(3n+1){grid-column:1/-1;grid-row:span 1;}
+ .page__grid .card--news .card__title span:first-child{font-size:15px!important}
+ .pages-slider__grid.rd-filtered{grid-template-columns:1fr 1fr!important;grid-auto-rows:170px}
+}
