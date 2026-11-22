@@ -59,3 +59,12 @@ h2.pages-slider__title:before,.rd-sec-title:before{content:"";display:block;widt
  .page__grid .card--news .card__title span:first-child{font-size:15px!important}
  .pages-slider__grid.rd-filtered{grid-template-columns:1fr 1fr!important;grid-auto-rows:170px}
 }
+html body section.rd-how{background-color:#0a1911!important;background-image:var(--r2-topo)!important;display:block!important;width:100%!important}
+html body .page__grid .card.card--news{padding:0!important;background:#222!important;border-radius:12px!important}
+html body .page__grid .card.card--news:hover{background:#222!important}
+@media (max-width:760px){
+ html body .page__grid .card--news .card__title{left:12px;right:12px;bottom:10px}
+ html body .page__grid .card.card--news:not(:nth-child(3n+1)) .card__title span:first-child{font-size:13.5px!important;line-height:1.15!important}
+ html body .page__grid .card.card--news:not(:nth-child(3n+1)) .price .old{display:none!important}
+}
+@media (min-width:761px){html body .page__grid.grid{grid-template-columns:2fr 1fr!important;grid-auto-rows:220px!important;margin-bottom:44px!important}}
